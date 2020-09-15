@@ -211,6 +211,7 @@ namespace Microsoft.Tools.WindowsDevicePortal
                 {
                     await dataStream.CopyToAsync(outStream);
                     dataBytes = new byte[outStream.Length];
+                    outStream.Position = 0;
                     await outStream.ReadAsync(dataBytes, 0, dataBytes.Length);
                 }
             }
